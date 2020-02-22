@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\BDOHelper.exe.config
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\BDOHelper.exe
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\BDOHelper.pdb
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\BDOHelper.xml
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\BDOHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.Form1.resources
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.frmBrowser.resources
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.frmOrb.resources
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.Resources.resources
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.vbproj.GenerateResource.cache
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.vbproj.CopyComplete
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.exe
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.xml
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.pdb
