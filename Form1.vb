@@ -6,15 +6,12 @@ Imports System.Threading
 Imports System.Web.Script.Serialization
 
 Public Class Form1
-    Dim Dragging As Boolean
-    Dim uriString As String = "https://bddatabase.net/ac.php?l=de&term=" 
+    Dim pLang = "de"
+    Dim uriString As String = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
     Public Shared Dim currentUrl As String = ""
 ' Stores the offset where the picturebox is clicked.
     Dim PointClicked As Point
-
-    Private Const WM_KEYDOWN = &H100
-    Private Const WM_KEYUP = &H101
-    
+    Dim Dragging As Boolean
     Private Sub pbMove_MouseDown(ByVal sender As Object, _
                                       ByVal e As System.Windows.Forms.MouseEventArgs) Handles pbMove.MouseDown
         If e.Button = MouseButtons.Left Then
@@ -53,12 +50,14 @@ Public Class Form1
         lvSearchResults.View = View.Details
         lvSearchResults.FullRowSelect = true
         lvSearchResults.GridLines = True
+        ComboBox1.SelectedItem = "German"
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close
     End Sub
     Private Sub cmdSearch_Click(sender As Object, e As EventArgs) Handles cmdSearch.Click
+        MsgBox(uriString)
         lvSearchResults.Items.Clear()
             Dim uri As New Uri(uriString + txtItem.Text)
             Dim Request As HttpWebRequest = HttpWebRequest.Create(uri)
@@ -111,10 +110,47 @@ Public Class Form1
 
     Private Sub lvSearchResults_DoubleClick(sender As Object, e As EventArgs) Handles lvSearchResults.DoubleClick
         Dim id As String = lvSearchResults.SelectedItems(0).SubItems(2).Text
-        Dim url As String = "https://bddatabase.net/de/item/" + id + "/"
+        Dim url As String = "https://bddatabase.net/" + pLang + "/item/" + id + "/"
         currentUrl = url
         Dim newBrowser As New frmBrowser
         newBrowser.StartPosition = FormStartPosition.CenterParent
         newBrowser.ShowDialog(Me)
+    End Sub
+
+    Private Sub txtItem_Click(sender As Object, e As EventArgs) Handles txtItem.Click
+        txtItem.Text = ""
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.SelectedItem.ToString() = "German" Then
+            pLang = "de"
+            uriString = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
+        ElseIf ComboBox1.SelectedItem.ToString() = "English" Then
+            pLang = "us"
+            uriString = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
+        ElseIf ComboBox1.SelectedItem.ToString() = "France" Then
+            pLang = "fr"
+            uriString = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
+        ElseIf ComboBox1.SelectedItem.ToString() = "Spain" Then
+            pLang = "sp"
+            uriString = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
+        ElseIf ComboBox1.SelectedItem.ToString() = "Turkish" Then
+            pLang = "tr"
+            uriString = "https://bddatabase.net/ac.php?l=" + pLang + "&term=" 
+        ElseIf ComboBox1.SelectedItem.ToString() = "Orc" Then
+            MsgBox("Ayh lat avhaav ukavupid? jiak gueukuk lat wanav avo mat!")
+        End If
+    End Sub
+
+    Private Sub cmdTax_Click(sender As Object, e As EventArgs) Handles cmdTax.Click
+        Dim newTax As New frmTaxCalc
+        newTax.StartPosition = FormStartPosition.CenterParent
+        newTax.ShowDialog(Me)
+    End Sub
+
+    Private Sub cmdInteractiveMap_Click(sender As Object, e As EventArgs) Handles cmdInteractiveMap.Click
+        Dim newMap As New frmMap
+        newMap.StartPosition = FormStartPosition.CenterParent
+        newMap.ShowDialog(Me)
     End Sub
 End Class

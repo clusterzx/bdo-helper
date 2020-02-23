@@ -14,3 +14,5 @@ C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.vbproj.CopyComplete
 C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.exe
 C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.xml
 C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.pdb
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.frmTaxCalc.resources
+C:\Users\Admin\source\repos\BDOHelper\obj\Debug\BDOHelper.frmMap.resources
